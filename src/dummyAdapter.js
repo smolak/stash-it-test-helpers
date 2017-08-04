@@ -40,7 +40,7 @@ function createDummyAdapter(options = {}) {
     const fooItem = createItem(builtFooKey, FOO_VALUE, mergedOptions.namespace);
     const barItem = createItem(builtBarKey, BAR_VALUE, mergedOptions.namespace);
     const fooWithExtraItem = createItem(builtFooWithExtraKey, FOO_VALUE, mergedOptions.namespace, FOO_EXTRA);
-    const barWithExtraItem = createItem(builtBarWithExtraKey, BAR_VALUE, mergedOptions.name, BAR_EXTRA);
+    const barWithExtraItem = createItem(builtBarWithExtraKey, BAR_VALUE, mergedOptions.namespace, BAR_EXTRA);
 
     const buildKeyStub = sinon.stub();
 
