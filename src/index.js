@@ -10,7 +10,6 @@ import { createDummyAdapter,
     NONEXISTENT_KEY,
     NONEXISTENT_VALUE
 } from './dummyAdapter';
-import createDummyCacheInstance from './dummyCacheInstance';
 import {
     testKey,
     testNamespace
@@ -24,7 +23,6 @@ import {
 } from './valueSets';
 
 export {
-    createDummyCacheInstance,
     createDummyAdapter,
     FOO_KEY,
     FOO_WITH_EXTRA_KEY,
