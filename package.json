@@ -1,6 +1,6 @@
 {
   "name": "stash-it-test-helpers",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Test helpers for stash-it adapters and plugins.",
   "author": "Jacek Smolak <jacek.smolak@gmail.com>",
   "main": "build/index.js",
