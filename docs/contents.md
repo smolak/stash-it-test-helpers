@@ -43,7 +43,7 @@ import {
 3. [testKey](#testkeyaction)
 4. [testNamespace](#testnamespaceaction)
 
-### createDummyAdapter(options)
+### createDummyAdapter(createItem, options = {})
 
 This method creates dummy adapter. It's primary use is to help test [stash-it](https://smolak.github.io/stash-it/)'s `createCache` and `registerPlugins` methods.
 It returns an object that mimics the behaviour of full-grown adapter. Because of that one can use it to stub any adapter when needed.
@@ -63,12 +63,20 @@ return {
 
 Every method in this object has preprogrammed behaviour. If you need to alter it, use [Sinon](sinonjs.org)'s stub API to do so.
 
-`createDummyAdapter` takes one argument, an object. It will look for `namespace` property, to set namespace for adapter.
+#### createItem
+
+This parameter is required (and best obtained from [stash-it](https://smolak.github.io/stash-it/)).
+Why from `stash-it`? To have it built in the very same fashion as `stash-it` does.
+You can pass any function that will create it, but for best results ues that one.
+
+#### options = {}
+
+`createDummyAdapter` will look for `namespace` property, to set namespace for adapter.
 If that object is omitted or namespace property is not passed, default namespace will be used, and it's value is `namespace`.
 Namespace, if passed, must be a string consisting only out of letters (azAZ), numbers, and `-`, `_` characters in any combination.
 
 ```javascript
-createDummyAdapter({ namespace: 'someNamespace-123_456' });
+createDummyAdapter(createItem, { namespace: 'someNamespace-123_456' });
 ```
 
 There are also all consts in use here, that is:

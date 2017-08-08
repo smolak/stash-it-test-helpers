@@ -1,5 +1,4 @@
 import sinon from 'sinon';
-import { createItem } from 'stash-it';
 
 function validateNamespace(namespace) {
     if (typeof namespace !== 'string') {
@@ -24,7 +23,7 @@ const NONEXISTENT_VALUE = undefined;
 
 const defaultNamespace = 'namespace';
 
-function createDummyAdapter(options = {}) {
+function createDummyAdapter(createItem, options = {}) {
     const defaultOptions = {
         namespace: defaultNamespace
     };
