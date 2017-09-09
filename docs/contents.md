@@ -40,8 +40,8 @@ import {
 ## Methods
 
 1. [createDummyAdapter](#createdummyadapteroptions)
-3. [testKey](#testkeyaction)
-4. [testNamespace](#testnamespaceaction)
+1. [testKey](#testkeyaction)
+1. [testNamespace](#testnamespaceaction)
 
 ### createDummyAdapter(createItem, options = {})
 
