@@ -64,6 +64,13 @@ function createDummyAdapter(createItem, options = {}) {
     getItemStub.withArgs(builtBarWithExtraKey).returns(barWithExtraItem);
     getItemStub.withArgs(builtNonexistentKey).returns(NONEXISTENT_VALUE);
 
+    const setExtraStub = sinon.stub();
+
+    setExtraStub.withArgs(builtFooKey, FOO_EXTRA).returns(FOO_EXTRA);
+    setExtraStub.withArgs(builtBarKey, BAR_EXTRA).returns(BAR_EXTRA);
+    setExtraStub.withArgs(builtFooWithExtraKey, FOO_EXTRA).returns(FOO_EXTRA);
+    setExtraStub.withArgs(builtBarWithExtraKey, BAR_EXTRA).returns(BAR_EXTRA);
+
     const getExtraStub = sinon.stub();
 
     getExtraStub.withArgs(builtFooKey).returns(fooItem.extra);
@@ -94,7 +101,8 @@ function createDummyAdapter(createItem, options = {}) {
         getItem: getItemStub,
         hasItem: hasItemStub,
         removeItem: removeItemStub,
-        setItem: setItemStub
+        setItem: setItemStub,
+        setExtra: setExtraStub
     };
 }
 
