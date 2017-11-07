@@ -123,6 +123,18 @@ This method, when one of const keys is used, returns an `extra` for item created
 
 For `NONEXISTENT_KEY` this method returns `undefined` as item for given key does not exist.
 
+#### setExtra(key, extra)
+
+This method, when one of const keys is used, returns an `extra` for item that key represents.
+
+For `NONEXISTENT_KEY` this method returns `undefined` as item for given key does not exist.
+
+#### addExtra(key, extra)
+
+This method, when one of const keys is used, returns an `extra` for item that key represents.
+
+For `NONEXISTENT_KEY` this method returns `undefined` as item for given key does not exist.
+
 #### hasItem(key)
 
 This method, when one of const key is used, reuturns `true`.
