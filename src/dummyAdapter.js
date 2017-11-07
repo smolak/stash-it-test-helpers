@@ -70,6 +70,7 @@ function createDummyAdapter(createItem, options = {}) {
     addExtraStub.withArgs(builtBarKey, BAR_EXTRA).returns(BAR_EXTRA);
     addExtraStub.withArgs(builtFooWithExtraKey, FOO_EXTRA).returns(FOO_EXTRA);
     addExtraStub.withArgs(builtBarWithExtraKey, BAR_EXTRA).returns(BAR_EXTRA);
+    addExtraStub.withArgs(builtNonexistentKey).returns(undefined);
 
     const setExtraStub = sinon.stub();
 
@@ -77,6 +78,7 @@ function createDummyAdapter(createItem, options = {}) {
     setExtraStub.withArgs(builtBarKey, BAR_EXTRA).returns(BAR_EXTRA);
     setExtraStub.withArgs(builtFooWithExtraKey, FOO_EXTRA).returns(FOO_EXTRA);
     setExtraStub.withArgs(builtBarWithExtraKey, BAR_EXTRA).returns(BAR_EXTRA);
+    setExtraStub.withArgs(builtNonexistentKey).returns(undefined);
 
     const getExtraStub = sinon.stub();
 
