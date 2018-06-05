@@ -190,4 +190,4 @@ Have a look at how it's being used in [stash-it-adapter-memory](https://github.c
 They are used to test various values against them. For instance, if you need to check if something is a string and should throw otherwise, use `nonStringValues`.
 It contains a handful of different types of data. Similar to rest of them.
 
-Have a look at how they're being used in [stash-it](https://github.com/smolak/stash-it/blob/master/test/unit/src/registerPlugins.test.js).
+Have a look at how they're being used in [stash-it](https://github.com/smolak/stash-it/blob/master/test/unit/src/createCache.test.js).
