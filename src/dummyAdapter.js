@@ -41,6 +41,8 @@ function createDummyAdapter(createItem, options = {}) {
     const fooWithExtraItem = createItem(builtFooWithExtraKey, FOO_VALUE, mergedOptions.namespace, FOO_EXTRA);
     const barWithExtraItem = createItem(builtBarWithExtraKey, BAR_VALUE, mergedOptions.namespace, BAR_EXTRA);
 
+    const getNamespaceStub = sinon.stub().returns(defaultNamespace);
+
     const buildKeyStub = sinon.stub();
 
     buildKeyStub.withArgs(FOO_KEY).returns(builtFooKey);
@@ -105,6 +107,7 @@ function createDummyAdapter(createItem, options = {}) {
     removeItemStub.withArgs(builtNonexistentKey).returns(false);
 
     return {
+        getNamespace: getNamespaceStub,
         addExtra: addExtraStub,
         buildKey: buildKeyStub,
         getExtra: getExtraStub,
