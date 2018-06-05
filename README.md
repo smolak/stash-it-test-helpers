@@ -2,9 +2,9 @@
 
 # stash-it-test-helpers
 
-During the development of [stash-it](https://smolak.github.io/stash-it/) I came across soem repetition and therefore extracted some helper functions / values that I used.
+During the development of [stash-it](https://smolak.github.io/stash-it/) I came across some repetition and therefore extracted few helper functions / values that I used.
 
-In order to help anyone developing some custom adapters or plugins, this separate module was created.
+In order to help anyone developing custom adapters or plugins, this separate module was created.
 
 ## Installation
 
