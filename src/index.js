@@ -10,10 +10,7 @@ import { createDummyAdapter,
     NONEXISTENT_KEY,
     NONEXISTENT_VALUE
 } from './dummyAdapter';
-import {
-    testKey,
-    testNamespace
-} from './validatonTests';
+import { testKey } from './validatonTests';
 import {
     invalidCharacters,
     nonArrayValues,
@@ -35,7 +32,6 @@ export {
     NONEXISTENT_KEY,
     NONEXISTENT_VALUE,
     testKey,
-    testNamespace,
     invalidCharacters,
     nonArrayValues,
     nonFunctionValues,
