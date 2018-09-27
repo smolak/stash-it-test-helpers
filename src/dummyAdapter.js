@@ -19,66 +19,66 @@ function createDummyAdapter(createItem) {
 
     const buildKeyStub = sinon.stub();
 
-    buildKeyStub.withArgs(FOO_KEY).returns(FOO_KEY);
-    buildKeyStub.withArgs(BAR_KEY).returns(BAR_KEY);
-    buildKeyStub.withArgs(FOO_WITH_EXTRA_KEY).returns(FOO_WITH_EXTRA_KEY);
-    buildKeyStub.withArgs(BAR_WITH_EXTRA_KEY).returns(BAR_WITH_EXTRA_KEY);
-    buildKeyStub.withArgs(NONEXISTENT_KEY).returns(NONEXISTENT_KEY);
+    buildKeyStub.withArgs(FOO_KEY).resolves(FOO_KEY);
+    buildKeyStub.withArgs(BAR_KEY).resolves(BAR_KEY);
+    buildKeyStub.withArgs(FOO_WITH_EXTRA_KEY).resolves(FOO_WITH_EXTRA_KEY);
+    buildKeyStub.withArgs(BAR_WITH_EXTRA_KEY).resolves(BAR_WITH_EXTRA_KEY);
+    buildKeyStub.withArgs(NONEXISTENT_KEY).resolves(NONEXISTENT_KEY);
 
     const setItemStub = sinon.stub();
 
-    setItemStub.withArgs(FOO_KEY, FOO_VALUE).returns(fooItem);
-    setItemStub.withArgs(BAR_KEY, BAR_VALUE).returns(barItem);
-    setItemStub.withArgs(FOO_WITH_EXTRA_KEY, FOO_VALUE, FOO_EXTRA).returns(fooWithExtraItem);
-    setItemStub.withArgs(BAR_WITH_EXTRA_KEY, BAR_VALUE, BAR_EXTRA).returns(barWithExtraItem);
+    setItemStub.withArgs(FOO_KEY, FOO_VALUE).resolves(fooItem);
+    setItemStub.withArgs(BAR_KEY, BAR_VALUE).resolves(barItem);
+    setItemStub.withArgs(FOO_WITH_EXTRA_KEY, FOO_VALUE, FOO_EXTRA).resolves(fooWithExtraItem);
+    setItemStub.withArgs(BAR_WITH_EXTRA_KEY, BAR_VALUE, BAR_EXTRA).resolves(barWithExtraItem);
 
     const getItemStub = sinon.stub();
 
-    getItemStub.withArgs(FOO_KEY).returns(fooItem);
-    getItemStub.withArgs(BAR_KEY).returns(barItem);
-    getItemStub.withArgs(FOO_WITH_EXTRA_KEY).returns(fooWithExtraItem);
-    getItemStub.withArgs(BAR_WITH_EXTRA_KEY).returns(barWithExtraItem);
-    getItemStub.withArgs(NONEXISTENT_KEY).returns(NONEXISTENT_VALUE);
+    getItemStub.withArgs(FOO_KEY).resolves(fooItem);
+    getItemStub.withArgs(BAR_KEY).resolves(barItem);
+    getItemStub.withArgs(FOO_WITH_EXTRA_KEY).resolves(fooWithExtraItem);
+    getItemStub.withArgs(BAR_WITH_EXTRA_KEY).resolves(barWithExtraItem);
+    getItemStub.withArgs(NONEXISTENT_KEY).resolves(NONEXISTENT_VALUE);
 
     const addExtraStub = sinon.stub();
 
-    addExtraStub.withArgs(FOO_KEY, FOO_EXTRA).returns(FOO_EXTRA);
-    addExtraStub.withArgs(BAR_KEY, BAR_EXTRA).returns(BAR_EXTRA);
-    addExtraStub.withArgs(FOO_WITH_EXTRA_KEY, FOO_EXTRA).returns(FOO_EXTRA);
-    addExtraStub.withArgs(BAR_WITH_EXTRA_KEY, BAR_EXTRA).returns(BAR_EXTRA);
-    addExtraStub.withArgs(NONEXISTENT_KEY).returns(undefined);
+    addExtraStub.withArgs(FOO_KEY, FOO_EXTRA).resolves(FOO_EXTRA);
+    addExtraStub.withArgs(BAR_KEY, BAR_EXTRA).resolves(BAR_EXTRA);
+    addExtraStub.withArgs(FOO_WITH_EXTRA_KEY, FOO_EXTRA).resolves(FOO_EXTRA);
+    addExtraStub.withArgs(BAR_WITH_EXTRA_KEY, BAR_EXTRA).resolves(BAR_EXTRA);
+    addExtraStub.withArgs(NONEXISTENT_KEY).resolves(undefined);
 
     const setExtraStub = sinon.stub();
 
-    setExtraStub.withArgs(FOO_KEY, FOO_EXTRA).returns(FOO_EXTRA);
-    setExtraStub.withArgs(BAR_KEY, BAR_EXTRA).returns(BAR_EXTRA);
-    setExtraStub.withArgs(FOO_WITH_EXTRA_KEY, FOO_EXTRA).returns(FOO_EXTRA);
-    setExtraStub.withArgs(BAR_WITH_EXTRA_KEY, BAR_EXTRA).returns(BAR_EXTRA);
-    setExtraStub.withArgs(NONEXISTENT_KEY).returns(undefined);
+    setExtraStub.withArgs(FOO_KEY, FOO_EXTRA).resolves(FOO_EXTRA);
+    setExtraStub.withArgs(BAR_KEY, BAR_EXTRA).resolves(BAR_EXTRA);
+    setExtraStub.withArgs(FOO_WITH_EXTRA_KEY, FOO_EXTRA).resolves(FOO_EXTRA);
+    setExtraStub.withArgs(BAR_WITH_EXTRA_KEY, BAR_EXTRA).resolves(BAR_EXTRA);
+    setExtraStub.withArgs(NONEXISTENT_KEY).resolves(undefined);
 
     const getExtraStub = sinon.stub();
 
-    getExtraStub.withArgs(FOO_KEY).returns(fooItem.extra);
-    getExtraStub.withArgs(BAR_KEY).returns(barItem.extra);
-    getExtraStub.withArgs(FOO_WITH_EXTRA_KEY).returns(fooWithExtraItem.extra);
-    getExtraStub.withArgs(BAR_WITH_EXTRA_KEY).returns(barWithExtraItem.extra);
-    getExtraStub.withArgs(NONEXISTENT_KEY).returns(undefined);
+    getExtraStub.withArgs(FOO_KEY).resolves(fooItem.extra);
+    getExtraStub.withArgs(BAR_KEY).resolves(barItem.extra);
+    getExtraStub.withArgs(FOO_WITH_EXTRA_KEY).resolves(fooWithExtraItem.extra);
+    getExtraStub.withArgs(BAR_WITH_EXTRA_KEY).resolves(barWithExtraItem.extra);
+    getExtraStub.withArgs(NONEXISTENT_KEY).resolves(undefined);
 
     const hasItemStub = sinon.stub();
 
-    hasItemStub.withArgs(FOO_KEY).returns(true);
-    hasItemStub.withArgs(BAR_KEY).returns(true);
-    hasItemStub.withArgs(FOO_WITH_EXTRA_KEY).returns(true);
-    hasItemStub.withArgs(BAR_WITH_EXTRA_KEY).returns(true);
-    hasItemStub.withArgs(NONEXISTENT_KEY).returns(false);
+    hasItemStub.withArgs(FOO_KEY).resolves(true);
+    hasItemStub.withArgs(BAR_KEY).resolves(true);
+    hasItemStub.withArgs(FOO_WITH_EXTRA_KEY).resolves(true);
+    hasItemStub.withArgs(BAR_WITH_EXTRA_KEY).resolves(true);
+    hasItemStub.withArgs(NONEXISTENT_KEY).resolves(false);
 
     const removeItemStub = sinon.stub();
 
-    removeItemStub.withArgs(FOO_KEY).returns(true);
-    removeItemStub.withArgs(BAR_KEY).returns(true);
-    removeItemStub.withArgs(FOO_WITH_EXTRA_KEY).returns(true);
-    removeItemStub.withArgs(BAR_WITH_EXTRA_KEY).returns(true);
-    removeItemStub.withArgs(NONEXISTENT_KEY).returns(false);
+    removeItemStub.withArgs(FOO_KEY).resolves(true);
+    removeItemStub.withArgs(BAR_KEY).resolves(true);
+    removeItemStub.withArgs(FOO_WITH_EXTRA_KEY).resolves(true);
+    removeItemStub.withArgs(BAR_WITH_EXTRA_KEY).resolves(true);
+    removeItemStub.withArgs(NONEXISTENT_KEY).resolves(false);
 
     return {
         addExtra: addExtraStub,
